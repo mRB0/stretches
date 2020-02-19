@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+
+import stretch
+from stretch import run_set, movements_with_breaks_between_sets, sets_with_progress, Movement
+
+if __name__ == '__main__':
+    # run faster when debugging!
+    #stretch.seconds_scale = 0.05
+   
+    run_set('Feet back, toes back/forward',
+            movements_with_breaks_between_sets(sets_with_progress([[Movement('Toes back', 5),
+                                                                    Movement('Toes forward', 5)]] * 15), 5),
+            'Feet forward')
+
+    print()
+    
+    run_set('Feet forward',
+            movements_with_breaks_between_sets(sets_with_progress([[Movement('Stretch', 5)]] * 15), 5),
+            'Heel raises')
+
+    print()
+    print("Do 30 heel raises, then press enter")
+    input()
+    
+    print("Do 30 resistance band stretches, then press enter")
+    input()
+    
+    run_set('Stand on one foot',
+            movements_with_breaks_between_sets(sets_with_progress([[Movement('Left foot', 15)],
+                                                                   [Movement('Right foot', 15)]] * 3), 3),
+            'Done')
